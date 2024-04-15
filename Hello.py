@@ -49,3 +49,52 @@ def run():
 
 if __name__ == "__main__":
     run()
+import streamlit as st
+from streamlit.logger import get_logger
+
+LOGGER = get_logger(__name__)
+
+def run():
+    st.set_page_config(
+        page_title="Hello Kwangho",
+        page_icon="👋",
+    )
+
+    st.write("# Welcome to Kwangho's Streamlit Page! 👋")
+
+    # Sidebar
+    st.sidebar.success("Select a demo above.")
+
+    # Main content area
+    st.markdown("### Explore our Streamlit Demos")
+
+    # Data for the table
+    data = {
+        "Demo Description": [
+            "Machine Learning and Data Science projects",
+            "Analyze the Udacity Self-driving Car Image Dataset",
+            "Explore a New York City rideshare dataset"
+        ],
+        "Resource": [
+            "Streamlit Documentation",
+            "Self-driving Car Dataset Demo",
+            "NYC Rideshare Data Demo"
+        ],
+        "Link": [
+            "https://docs.streamlit.io",
+            "https://github.com/streamlit/demo-self-driving",
+            "https://github.com/streamlit/demo-uber-nyc-pickups"
+        ]
+    }
+
+    # Display the table
+    st.table(data)
+
+    st.markdown("### Want to learn more?")
+    st.markdown("""
+    - Check out [streamlit.io](https://streamlit.io)
+    - Ask a question in our [community forums](https://discuss.streamlit.io)
+    """)
+
+if __name__ == "__main__":
+    run()
